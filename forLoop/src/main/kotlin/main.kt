@@ -6,5 +6,7 @@ fun main(){
 }
 
 fun students(): Unit {
-    val
+    val incubation = listOf("wonder","vivian","albert")
+    for (item in incubation)
+        println(item)
 }
