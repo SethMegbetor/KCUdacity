@@ -3,10 +3,12 @@ fun main(){
     for (item in items){
         println(item)
     }
+    println()
+    students()
 }
 
 fun students(): Unit {
     val incubation = listOf("wonder","vivian","albert")
-    for (item in incubation)
-        println(item)
+    for (index in incubation.indices)
+        println("student at $index is ${incubation[index]}")
 }
