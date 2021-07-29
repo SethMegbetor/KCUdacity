@@ -1,3 +1,5 @@
+import kotlin.random.Random
+
 //import java.util.*
 //
 //fun main(): Unit {
@@ -35,11 +37,57 @@
 //    println(message)
 //}
 
-fun main(): Unit {
-    var time = 20
-    var beforeMidDay = if (time < 12) true else false
-    println(beforeMidDay)
+//
 
-    var check = "the time is ${if (time < 12) "before," else "after"} midday"
-    print(check)
+import java.util.*
+import kotlin.math.nextDown
+
+fun main(arg: Array<String>){
+    feedTheFish()
+}
+
+fun feedTheFish(){
+    val day = randomDay()
+    val food = fishFood(day)
+    println("Today is $day and the fish will eat $food")
+
+//    if (shouldChangeWater(da)){
+//        println("Change the water today")
+//    }
+
+//    swim()
+//    swim(speed = "slow")
+}
+
+//fun swim(speed: String = "fast"){
+//    println("swimming $speed")
+//}
+
+fun shouldChangeWater(
+    day: String,
+    temperature: Int = 22,
+    dirty: Int = 20{
+
+    }
+) {
+}
+
+fun randomDay() : String {
+    val week = listOf ("Monday", "Tuesday","Wednesday","Thursday","Friday", "Saturday", "Sunday")
+    return week[Random.nextInt(0,7)]
+}
+
+fun fishFood (day : String): String{
+    var food = "fasting"
+
+    when (day){
+        "Monday" -> food = "flakes"
+        "Tuesday" -> food = "pellets"
+        "Wednesday" -> food = "redworms"
+        "Thursday" -> food = "granules"
+        "Friday" -> food = "mosquito"
+        "Saturday" -> food = "lettuce"
+        "Sunday" -> food = "plankton"
+    }
+    return food
 }
